@@ -2,6 +2,8 @@
 
 This is a Node.js-based service for converting DOCX files to PDF. It also allows for font uploads to be used in the conversion process. The service is built using Express and Multer, and it leverages LibreOffice and unoserver for the conversion.
 
+** UNO mode is currently in progress to fix an error.
+
 ## Features
 
 - Convert DOCX files to PDF using LibreOffice CLI or unoserver
@@ -60,13 +62,6 @@ docker run -d -p 8011:8011 --env-file .env docx2pdf
 
 ```sh
 curl --location 'http://localhost:8011/docx-to-pdf' \
---form 'document=@"/path/to/your/TEST_DOCX.docx"'
-```
-
-#### UNO Mode
-
-```sh
-curl --location 'http://localhost:8011/docx-to-pdf/uno' \
 --form 'document=@"/path/to/your/TEST_DOCX.docx"'
 ```
 
